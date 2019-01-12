@@ -4,7 +4,7 @@
   "description": "",
   "main": "bundle.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest -i --coverage || true",
     "build": "webpack",
     "start": "nodemon ./server/server.js",
     "webpack": "webpack -d -w",
@@ -25,9 +25,9 @@
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
     "express": "^4.16.2",
-    "jest": "^22.3.0",
     "knex": "^0.16.3",
     "morgan": "^1.9.1",
+    "mysql": "^2.16.0",
     "pg": "^7.7.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -35,10 +35,20 @@
   },
   "devDependencies": {
     "css-loader": "^2.0.2",
+    "faker": "^4.1.0",
+    "jest": "^22.4.4",
     "nodemon": "^1.18.9",
     "pm2": "^3.2.4",
     "style-loader": "^0.23.1",
     "supertest": "^3.3.0",
     "webpack-cli": "^3.1.2"
+  },
+  "jest": {
+    "verbose": false,
+    "testURL": "http://localhost",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "<rootDir>/tests/"
+    ]
   }
 }
